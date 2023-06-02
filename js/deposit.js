@@ -3,6 +3,12 @@ document.getElementById('deposit-button').addEventListener('click', function(){
     const depositField = document.getElementById('deposit-field');
     const depositString = depositField.value;
     const depositAmount = parseFloat(depositString);
+    depositField.value = '';
+
+    if(isNaN(depositAmount)){
+        alert('Please Enter an amount');
+        return;
+    }
 
 
     const  depositTotal = document.getElementById('deposit-total');
@@ -23,5 +29,7 @@ document.getElementById('deposit-button').addEventListener('click', function(){
 
     
     balanceTotal.innerText = newTotalBalance;
+
+    depositField.value = '';
 
 })
